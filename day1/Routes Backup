@@ -1,0 +1,22 @@
+Routes Backup
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/milad', function () {
+    $data['subtitle'] = "This is my subtitle";
+    return view('milad', $data );
+});
+
+Route::get('/about', function(){
+    return 'Hello Worlds';
+});
+
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/{post}/show', 'PostsController@show');
+
+Route::get('/test', function(){
+    $data['title'] = 'A View Layout';
+    return view ('layouts.main', $data);
+});

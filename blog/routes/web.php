@@ -13,23 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/milad', function () {
-    $data['subtitle'] = "This is my subtitle";
-    return view('milad', $data );
+Route::get('/', function(){
+    $data['title'] = "Welcome to the new Main";
+    return view('welcome', $data);
 });
 
 Route::get('/about', function(){
-    return 'Hello Worlds';
+    $data['title'] = "About us";
+    return view('about', $data);
+});
+
+Route::get('/test', function(){
+    $data['title'] = "About us";
+    return view('layouts/blog');
+});
+
+Route::get('/test1', function(){
+    $data['title'] = "Test 1";
+    return view('layouts/blog');
 });
 
 Route::get('/posts', 'PostsController@index');
-Route::get('/posts/{post}/show', 'PostsController@show');
 
-Route::get('/test', function(){
-    $results = App\Post::all();
-    return $results;
-});
+Route::get('/posts/{post}/show', 'PostsController@show');

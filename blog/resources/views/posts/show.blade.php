@@ -1,33 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ $post->title }}</title>
-    <style>
-        p.abstract{
-            padding: 10px;
-            background: #efe;
-            margin: 20px;
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body>
-    <h1>{{ $post->title }}</h1>
+@extends('layouts/blog')
 
-   
+@section('content')
 
-    <div class="post">
-        
-        <p class="abstract"> {{ $post->abstract }}</p>
+<!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="{{$post->featured_image}}" alt="{{$post->title}}">
+          <div class="card-body">
+            <h1 class="card-title">{{$post->title}}</h1>
+            <div class="card-text">
 
-        <p><img src="{{$post->featured_image}}" alt="{{$post->title}}">
-        </p>
+                <p>{{$post->abstract}}</p>
+                {!! $post->body !!}
 
 
-        {!! $post->body !!}
-    </div>
+            </div>
+          
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2020 by
+            <a href="#">Milad Darani</a>
+          </div>
+        </div>
 
- 
-</body>
-</html>
+
+
+
+
+@stop

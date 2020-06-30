@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>My first view page</h1>
-    <h2>{{ $subtitle }}</h2>
+    <h1>This is TEST1 {{$title}}</h1>
+
 </body>
 </html>
