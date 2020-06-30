@@ -13,57 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data['title'] = "Home";
-    $data['ipsum'] = "<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-   <li>Vestibulum auctor dapibus neque.</li>
-</ul>
-      ";
-    return view('welcome');
-});
-
-Route::get('/about', function () {
-    $data['title'] = "Home";
-    $data['ipsum'] = "<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-   <li>Vestibulum auctor dapibus neque.</li>
-</ul>
-      ";
-    return view('welcome');
-});
-
-Route::get('/support', function () {
-    $data['title'] = "Home";
-    $data['ipsum'] = "<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-   <li>Vestibulum auctor dapibus neque.</li>
-</ul>
-      ";
-    return view('welcome');
-});
-
-Route::get('/services', function () {
-    $data['title'] = "Home";
-    $data['ipsum'] = "<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-   <li>Vestibulum auctor dapibus neque.</li>
-</ul>
-      ";
-    return view('welcome');
-});
-
-Route::get('/contact', function () {
-    $data['title'] = "Home";
-    $data['ipsum'] = "<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-   <li>Vestibulum auctor dapibus neque.</li>
-</ul>
-      ";
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/support', 'PagesController@support');
+Route::get('/services', 'PagesController@services');
+Route::get('/contact', 'PagesController@contact');

@@ -63,6 +63,15 @@
             }
         </style>
     </head>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -81,7 +90,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    HELLO
+                    <h1>{{$title}}</h1>
+                </div>
+
+                <div class="contents">
+                    <p>{{$ipsum}}</p>
                 </div>
 
                 
