@@ -20,6 +20,8 @@ class CreatePostsTable extends Migration
             $table->longText('body');
             $table->string('featured_image',255);
             $table->enum('status',['public', 'private'])->default('public');
+            $table->integer('category_id')->unsigned();
+            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->softDeletes();
             $table->timestamps();
         });

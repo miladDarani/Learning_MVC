@@ -10,9 +10,10 @@ class PostsController extends Controller
     //
     public function index()
     {
-        $data['posts'] = Post::all();
-        $data['title'] = 'All blog Posts';
-        return view('posts/index', $data);
+        $class = 'posts';
+        $posts = Post::with('category')->latest()->get();
+        $title = 'Recent Posts';
+        return view('posts/index', compact('posts', 'title', 'class'));
 
     }
 

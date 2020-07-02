@@ -21,7 +21,7 @@
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
-            <a href="#">Milad Darani</a>
+            <a href="#">Milad Darani</a>. Category: <a href="/cat/{{$post->category->name}}">{{$post->category->name}}</a>
           </div>
         </div>
     @endforeach
