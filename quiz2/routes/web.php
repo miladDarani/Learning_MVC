@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data['title'] = "Home Page";
+    return view('main', $data);
+});
+
+
+Route::get('/students', function(){
+    $data['title'] = "Student List";
+    return view('student_list', $data);
+});
+
+Route::get('/detail', function(){
+    $data['title'] = "Student Detail";
+    return view('student_detail', $data);
 });
