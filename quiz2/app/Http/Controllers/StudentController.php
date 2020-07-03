@@ -18,4 +18,10 @@ class StudentController extends Controller
         $data['title']= 'This is my homepage for Quiz 2';
         return view('main', $data);
     }
+
+    public function show(Student $student){
+        $data['student'] = $student;
+        $data['title'] = "Detail View";
+        return view('/students/student', $data);
+    }
 }

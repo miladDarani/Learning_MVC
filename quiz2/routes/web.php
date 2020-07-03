@@ -31,3 +31,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/students', 'StudentController@allStudents');
 Route::get('/', 'StudentController@index');
+Route::get('/students/{student}/student', 'StudentController@show');

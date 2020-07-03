@@ -13,7 +13,7 @@
         </ul>
       </nav>
   
-      <h1 class="my-4">Home Page</h1>
+      <h1 >{{$title}}</h1>
 
       <p>{{$title}}</p>
 
