@@ -13,18 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data['title'] = "Home Page";
-    return view('main', $data);
-});
+// Route::get('/', function () {
+//     $data['title'] = "Home Page";
+//     return view('main', $data);
+// });
 
 
-Route::get('/students', function(){
-    $data['title'] = "Student List";
-    return view('student_list', $data);
-});
+// Route::get('/students', function(){
+//     $data['title'] = "Student List";
+//     return view('/students', $data);
+// });
 
-Route::get('/detail', function(){
-    $data['title'] = "Student Detail";
-    return view('student_detail', $data);
-});
+// Route::get('/detail', function(){
+//     $data['title'] = "Student Detail";
+//     return view('/students/student', $data);
+// });
+
+Route::get('/students', 'StudentController@allStudents');
+Route::get('/', 'StudentController@index');
