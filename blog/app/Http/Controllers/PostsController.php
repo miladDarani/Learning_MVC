@@ -17,9 +17,12 @@ class PostsController extends Controller
 
     }
 
-    public function show(Post $post){
-        $data['post'] = $post;
-        $data['title'] = "Blog Show";
-        return view('posts/show', $data);
+    public function show($id){
+        
+        $post=Post::find($id);
+        //get with user its related to 
+        $comments = $post->comments()->with('user')->get();
+        $title = $post->title;
+        return view('posts/show', compact('post', 'comments','title',));
     }
 }

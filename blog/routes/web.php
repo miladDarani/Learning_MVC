@@ -36,3 +36,9 @@ Route::get('/test1', function(){
 Route::get('/posts', 'PostsController@index');
 
 Route::get('/posts/{post}/show', 'PostsController@show');
+
+Route::post('/comments', 'CommentsController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
