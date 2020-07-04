@@ -13,27 +13,27 @@ class SeedCategoriesTable extends Seeder
     {
         DB::table('categories')->insert([
 
-            'name' => 'racing'
+            'name' => 'Racing'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'adventure'
+            'name' => 'Adventure'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'fps'
+            'name' => 'First Person Shooter'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'action'
+            'name' => 'Action'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'sports'
+            'name' => 'Sports'
         ]);
 
 

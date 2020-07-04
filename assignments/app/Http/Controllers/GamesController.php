@@ -9,9 +9,9 @@ class GamesController extends Controller
     
 
     public function index(){
-        $games = Game::all();
+        $games = Game::with('category')->latest()->get();;
         
         return view('home', compact('games'));
     }
-    
+
 }

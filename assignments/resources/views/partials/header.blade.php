@@ -20,6 +20,35 @@
         h1 {
             color: white;
         }
+        h6{
+            color:blue;
+
+        }
+        .bord{
+            border:6px solid #0c1b2b;
+        }
+        img{
+            border:none;
+            border-radius: 0;
+        }
+        h5 {
+          padding-bottom: 4px;
+          background-color:#0c1b2b;
+          color:white;
+          margin-bottom: 0
+
+        }
+        .card-img-top {
+          border-radius: 0 !important;
+        }
+        .card{
+          flex-direction:row;
+          border:3px solid white;
+          border-radius: 0;
+        }
+        .col-sm-12, .col-md-6, .col-xl-4{
+          padding: 0 !important;
+        }
     </style>
 
 </head>
@@ -59,8 +88,7 @@
           aria-haspopup="true" aria-expanded="false">CATEGORIES</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          
         </div>
       </li>
 
