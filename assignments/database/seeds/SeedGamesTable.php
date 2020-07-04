@@ -15,23 +15,10 @@ class SeedGamesTable extends Seeder
 
             'title' => "Gran Turismo 7" ,
             'abstract' => ' A Driving Simulator',
-            'body'=> '<div class="txt-area">
-                        <h3>For the 15th Anniversary of the Series:<br>Vision Gran Turismo</h3>
-
-                        <h4>Including more than 1200 cars</h4>
+            'body'=> '
                         <p>More than 120 cars have been added to the lineup, putting the number of available cars to 1200-plus. The large selection of cars include those from the popular FIA GT3 category, which have become the mainstay of GT racing today.</p>
 
-                        <h4>Includes 40 Locations, 107 layouts</h4>
-                        <p>In addition to new tracks such as Mt. Panorama, Silverstone, Brands Hatch, Willow Springs Raceway and Red Bull Ring, original tracks including Apricot Hill and Mid-Field Raceway have made a comeback in this version of the game.</p>
-
-                        <h4>Online</h4>
-                        <p>In addition to official Seasonal Events, an Open Lobby invites players to race online and communicate with others, Among the features offered are quick matches with preset regulations for easy online matching and racing, as well as community sites where players can form their own clubs to create and enjoy race events.</p>
-
-                            <h4>Career Mode</h4>
-                            <p>In this main facet of this game where players begin from the entry level and gradually acquire higher level licenses, a new system has been introduced where players collect ‘stars’ to progress, allowing those with different skill levels to enjoy the game at their own pace. Many types of events have been made available, including those where the weather conditions change continuously and recreate the feeling of endurance races in a much shorter period of time. Winning events will award in-game credits that can be used to purchase cars and parts.</p>
-
-                            <h4>B-Spec</h4>
-                            <p>B-Spec mode, where an AI driver races for the player, has been implemented in all Career Mode race events. You can use B-Spec for races that you may find difficult completing, such as some of the longer endurance races. Or you can use it when you just want to enjoy watching a race. B-Spec can be selected from the Quick Menu displayed before the start of an event race in Career Mode.</p>',
+                       ',
             'image' => 'gt-small.jpg',
             'rating' => 'everyone',
             'year' => 2021,
@@ -91,8 +78,8 @@ class SeedGamesTable extends Seeder
 
         DB::table('games')->insert([
 
-            'title' => "Gran Turismo 7" ,
-            'abstract' => ' A Driving Simulator',
+            'title' => "PGA Tour 2K21" ,
+            'abstract' => 'Real Golf',
             'body'=> '<div class="txt-area">
                         <h3>For the 15th Anniversary of the Series:<br>Vision Gran Turismo</h3>
 
@@ -113,7 +100,7 @@ class SeedGamesTable extends Seeder
             'title' => "Assassin's Creed" ,
             'abstract' => 'England in the age of the Vikings is a fractured nation of petty lords and warring kingdoms. Beneath the chaos lies a rich and untamed land waiting for a new conqueror',
             'body'=> '<p>Become Eivor, a mighty Viking raider and lead your clan from the harsh shores of Norway to a new home amid the lush farmlands of ninth-century England. Explore a beautiful, mysterious open world where you will ll face brutal enemies, raid fortresses, build your clans new settlement, and forge alliances to win glory and earn a place in Valhalla. </p>',
-            'image' => 'gt-small.jpg',
+            'image' => 'ac.jpg',
             'rating' => 'everyone',
             'year' => 2021,
             'category_id' => 1
