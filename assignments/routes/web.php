@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'GamesController@index');
-Route::get('/detail', 'GamesController@test');
+Route::get('/about', 'GamesController@about');
+Route::get('/contact', 'GamesController@contact');
+Route::get('/{game}/detail', 'GamesController@show');
+Route::get('/{category}/category', 'CategoriesController@show');

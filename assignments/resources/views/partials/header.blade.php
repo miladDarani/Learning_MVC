@@ -49,6 +49,33 @@
         .col-sm-12, .col-md-6, .col-xl-4{
           padding: 0 !important;
         }
+        footer {
+            background: whitesmoke;
+            margin-top: 60px;
+          }
+          .sub-menu{
+            margin:0 auto;
+            width: 100%;
+            background-color: white;
+
+          }
+          .cat-ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+
+          }
+          .cat-ul li {
+            margin:16px;
+            color: white;
+          }
+
+          .cat-ul li a {
+            color: #444;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
     </style>
 
 </head>
@@ -71,15 +98,15 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">HOME
+        <a class="nav-link" href="/">HOME
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT</a>
+        <a class="nav-link" href="/about">ABOUT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
+        <a class="nav-link" href="/contact">CONTACT</a>
       </li>
 
       <!-- Dropdown -->
@@ -87,8 +114,9 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">CATEGORIES</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          
+          @foreach($categories as $category)
+          <a class="dropdown-item" href="#">{{$category->name}}</a>
+          @endforeach
         </div>
       </li>
 

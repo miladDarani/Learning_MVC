@@ -3,7 +3,18 @@
 
 
     <div class="container">
-        <div class="row">
+        <div class="row ">
+            <div class="sub-menu">
+
+                <ul class="cat-ul">
+                    @foreach($categories as $category)
+                    <li><a href="/{{$category->id}}/category">{{$category->name}}</a></li>
+                    @endforeach
+                </ul>
+                <hr>
+
+
+            </div>
             <div class=" card-wrap" style="display:flex; flex-wrap: wrap; text-align: center; justify-content: center;">
 
 
@@ -20,7 +31,7 @@
                         <div class="card-body ">
                             <h6 class="card-title">{{$game->category->name}}</h6>
                             <p class="card-text">{{$game->abstract}}</p>
-                            <a href="#" class="btn btn-primary">More Details</a>
+                            <a href="/{{$game->id}}/detail" class="btn btn-primary">More Details</a>
                         </div>
 
                     </div>
@@ -34,9 +45,6 @@
         </div>
     </div>
 
-
-    
-    <p>{{$game->title}}</p>
 
     
 @include('partials/footer')
