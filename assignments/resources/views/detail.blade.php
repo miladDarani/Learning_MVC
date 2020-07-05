@@ -117,7 +117,7 @@
             <!--Accordion wrapper-->
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                 
-            <h4 class="mb-3">Product Details</h4>
+            
               <!-- Accordion card -->
               <div class="card">
                 
