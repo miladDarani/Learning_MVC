@@ -76,6 +76,12 @@
             font-weight: bold;
             text-transform: uppercase;
           }
+
+          @media only screen and (max-width: 991px) {
+            .cat-ul{
+              display: none;
+            }
+          }
     </style>
 
 </head>
