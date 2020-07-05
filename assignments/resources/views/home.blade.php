@@ -1,5 +1,5 @@
 @include('partials/header')
-    <h1 class="text-center pt-5 mb-5">Milad's Favorite Video Games</h1>
+    
 
 
     <div class="container">
@@ -31,7 +31,7 @@
                         <div class="card-body ">
                             <h6 class="card-title">{{$game->category->name}}</h6>
                             <p class="card-text">{{$game->abstract}}</p>
-                            <a href="/{{$game->id}}/detail" class="btn btn-primary">More Details</a>
+                            <a href="/{{$game->id}}/detail" class="btn btn-primary btn-sm btn-block">More Details</a>
                         </div>
 
                     </div>

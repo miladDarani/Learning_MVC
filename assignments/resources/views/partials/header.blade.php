@@ -103,15 +103,15 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li <?php if($title == "Home") {echo 'class="nav-item active"';}else{echo "class='nav-item' ";} ?>>
         <a class="nav-link" href="/">HOME
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li <?php if($title == "About") {echo 'class="nav-item active"';}else{echo "class='nav-item' ";} ?>>
         <a class="nav-link" href="/about">ABOUT</a>
       </li>
-      <li class="nav-item">
+      <li <?php if($title == "Contact") {echo 'class="nav-item active"';} else{echo "class='nav-item' ";} ?> >
         <a class="nav-link" href="/contact">CONTACT</a>
       </li>
 

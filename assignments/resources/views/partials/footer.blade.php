@@ -6,7 +6,7 @@
   <div class="container">
 
     <!-- Grid row-->
-    <div class="row text-center">
+    <div class="row text-center" style="color: deepskyblue;">
 
       <!-- Grid column -->
       <div class="col-md-12 py-5">
@@ -47,7 +47,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+  <div class="footer-copyright text-center py-3" style="color:#444">© 2018 Copyright:
     <a href="/"> Milad Darani</a>
   </div>
   <!-- Copyright -->

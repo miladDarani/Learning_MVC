@@ -252,7 +252,7 @@
                 <!-- Title -->
                 <h5 class="card-title mb-1">
                   <strong>
-                    <a href="">{{$single->title}}</a>
+                    <a href="/{{$single->id}}/detail">{{$single->title}}</a>
                   </strong>
                 </h5>
                
