@@ -19,12 +19,13 @@ class GamesController extends Controller
     public function show($id){
         
         $game=Game::find($id);
-        $games=Game::limit(4)->offset(4)->get();;
+        $games=Game::limit(4)->offset(4)->get();
+        $categories = Category::all();
         //get with user its related to 
         // $comments = $post->comments()->with('user')->get();
         $title = $game->title;
 
-        return view('/detail', compact('game','title','games'));
+        return view('/detail', compact('game','title','games', 'categories'));
     }
 
     public function about(){
