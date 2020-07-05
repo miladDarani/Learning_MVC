@@ -30,6 +30,7 @@
 
                         <div class="card-body ">
                             <h6 class="card-title">{{$game->category->name}}</h6>
+                            <p style="font-size:13px;">{{$game->year}}</p>
                             <p class="card-text">{{$game->abstract}}</p>
                             <a href="/{{$game->id}}/detail" class="btn btn-primary btn-sm btn-block">More Details</a>
                         </div>

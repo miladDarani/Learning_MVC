@@ -72,6 +72,7 @@
             <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
             <span class="red-text font-weight-bold">
                 <p style="font-size:16px; margin:0"><strong>Rating: {{$game->rating}}</strong></p>
+                <p style="font-size:13px;">{{$game->year}}</p>
             </span>
             </h3>
 
