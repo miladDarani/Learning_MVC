@@ -20,7 +20,7 @@ class SeedPostsTablewithFaker extends Seeder
                 'title' => $this->faker->sentence(4),
                 'abstract' => $this->faker->sentence(50),
                 'body' => $this->getParas(5),
-                'featured_image' => 'https://picsum.photos/800/400',
+                'featured_image' => '800x400.jpg',
                 'created_at' => $this->faker->dateTimeBetween('-2 years', 'now'),
                 'category_id' => rand(1,4 )
             ]);

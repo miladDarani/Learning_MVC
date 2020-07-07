@@ -4,7 +4,7 @@
 
 <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="{{$post->featured_image}}" alt="{{$post->title}}">
+          <img class="card-img-top" src="/images/{{$post->featured_image}}" alt="{{$post->title}}">
           <div class="card-body">
             <h1 class="card-title">{{$post->title}}</h1>
 
@@ -49,6 +49,23 @@
 
                          <div class="form-group">
                               <textarea  class="form-control" name="comment" id="comment" cols="30" rows="3"></textarea>
+                              @error('comment')
+                              <div class="alert alert-danger">
+                                {{$message}}
+                              </div>
+                              @enderror
+
+                              @error('user_id')
+                              <div class="alert alert-danger">
+                                {{$message}}
+                              </div>
+                              @enderror
+
+                              @error('post_id')
+                              <div class="alert alert-danger">
+                                {{$message}}
+                              </div>
+                              @enderror
                          </div>
 
 

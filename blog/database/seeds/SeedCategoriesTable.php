@@ -13,22 +13,27 @@ class SeedCategoriesTable extends Seeder
     {
         DB::table('categories')->insert([
 
-            'name' => 'post'
+            'name' => 'Uncategorized'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'tweet'
+            'name' => 'Post'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'article'
+            'name' => 'Tweet'
         ]);
 
         DB::table('categories')->insert([
 
-            'name' => 'page'
+            'name' => 'Article'
+        ]);
+
+        DB::table('categories')->insert([
+
+            'name' => 'Page'
         ]);
 
     }

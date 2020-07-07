@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Comment;
 
 class CommentsController extends Controller
 {
@@ -34,21 +34,8 @@ class CommentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        //returns an array of all form  values if valid
-        $valid = $request->validate([
-            'comment' => 'required|string',
-            'user_id' => 'required|integer',
-            'post_id' => 'required|integer'
-        ]);
-        
-        $comment = new Comment();
-        $comment->post_id = $valid['post_id'];
-        $comment->user_id = $valid['user_id'];
-        $comment->comment = $valid['comment'];
-        $comment->save();
-
-        return back()->with('success', "Your comment has been saved");
+    {
+        //
     }
 
     /**

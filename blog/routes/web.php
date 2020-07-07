@@ -33,12 +33,59 @@ Route::get('/test1', function(){
     return view('layouts/blog');
 });
 
+
+
+// OPTION 1
+
+// Route::get('/deals', function(){
+//     $data['title'] = 'Deals for members';
+//     return view('deals', $data);
+// })->middleware('auth');
+
+// Route::get('/members', function (){
+//     $data['title'] = 'Members Only';
+//     return view('members');
+// })->middleware('auth');
+// 
+// 
+
+//OPTION 2
+Route::middleware('auth')->group(function(){
+
+Route::get('/deals', function(){
+    $data['title'] = 'Deals for members';
+    return view('deals', $data);
+    });
+
+Route::get('/members', function (){
+    $data['title'] = 'Members Only';
+    return view('members',$data);
+    });
+
+});
+
+Route::middleware('admin')->group(function(){
+
+    Route::get('/admin/posts', 'Admin\PostsController@index');
+    Route::get('/admin', 'AdminController@home');
+    Route::get('admin/posts/create', 'Admin\PostsController@create');
+    Route::post('admin/posts/create', 'Admin\PostsController@store');
+});
+
+
+
+
 Route::get('/posts', 'PostsController@index');
 
 Route::get('/posts/{post}/show', 'PostsController@show');
 
 Route::post('/comments', 'CommentsController@store');
 
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
