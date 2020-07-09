@@ -17,7 +17,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $title = "Manage Posts";
+        $title = "Manage games";
         $games = Game::with('category')->latest()->paginate(10);
         return view('admin/games/index', compact('title', 'games') );
     }
@@ -29,7 +29,9 @@ class GamesController extends Controller
      */
     public function create()
     {
-        //
+        $title= 'Create a new Game';
+        $categories = Category::all();
+        return view('admin/games/create', compact('title', 'categories'));
     }
 
     /**
@@ -38,9 +40,40 @@ class GamesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+     public function store(Request $request)
     {
-        //
+
+        $valid = $request->validate([
+            'title' => 'required|string|max:255',
+            'abstract' => 'required|string|max:500',
+            'body' => 'required|string',
+            'featured_image' => 'nullable|image',
+            'category_id' => 'nullable|integer',
+            'year'=> 'nullable|integer'
+        ]);
+
+        if(!empty($valid['featured_image'])){
+        //get the uploaded file
+        $file = $request->file('featured_image');
+        //get the original file name
+        $featured_image = time(). '_' . $file->getClientOriginalName();
+        //save the image
+        $path = $file->storeAs('public/images', $featured_image);
+        
+
+        }
+
+        Game::create([
+
+            'title' => $valid['title'],
+            'abstract'=>$valid['abstract'],
+            'body'=>$valid['body'],
+            'category_id'=>$valid['category_id'] ?? 1,
+            'featured_image' => $featured_image ?? '' ,
+            'year' => $valid['year']
+            
+        ]);
+        return redirect('/admin/games')->with('success', 'Your Game was saved successfully');
     }
 
     /**
@@ -62,7 +95,18 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+
+        $Game = Game::find($id);
+        $categories = Category::all();
+        $title = 'Edit Game';
+        return view('admin/games/edit', compact('title', 'Game', 'categories'));
+
+
+
+
+
+
     }
 
     /**
@@ -72,9 +116,44 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'id' => 'required|integer',
+            'title' => 'required|string|max:255',
+            'abstract' => 'required|string|max:500',
+            'body' => 'required|string',
+            'status' => 'nullable|string',
+            'featured_image' => 'nullable|image',
+            'category_id' => 'nullable|integer'
+        ]);
+
+        if(!empty($valid['featured_image'])){
+        //get the uploaded file
+        $file = $request->file('featured_image');
+        //get the original file name
+        $featured_image = time(). '_' . $file->getClientOriginalName();
+        //save the image
+        $path = $file->storeAs('public/images', $featured_image);
+
+        }
+
+        $Game = Game::find($valid['id']);
+        $Game->title = $valid['title'];
+        $Game->abstract = $valid['abstract'];
+        $Game->body = $valid['body'];
+        $Game->year = $valid['year'];
+        $Game->category_id = $valid['category_id'] ?? 1;
+        if(!empty($featured_image)){
+            $Game->featured_image = $featured_image;
+        }
+
+        if($Game->save()){
+            return redirect('admin/games')->with('success', 'Game have been updated');
+        }
+
+        return redirect('admin/games')->with('error', 'There was a problem');
+
     }
 
     /**
@@ -83,8 +162,17 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        //validate , make sure id is passed in request
+        $valid = $request->validate([
+            'id'=> 'required|integer'
+        ]);
+            if(Game::find($valid['id'])->delete()){
+
+                return back()->with('success', 'Game has been deleted!');
+            }
+            return back()->with('error', "There was a problem deleting the Game");
+        
     }
 }

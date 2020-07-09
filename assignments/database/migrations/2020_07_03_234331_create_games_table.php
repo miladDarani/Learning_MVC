@@ -22,7 +22,7 @@ class CreateGamesTable extends Migration
             $table->enum('rating',['mature', 'everyone'])->default('everyone');
             $table->integer('category_id')->unsigned();
             $table->integer('year')->unsigned();
-            $table->string('image');
+            $table->string('featured_image');
             $table->softDeletes();
         });
     }

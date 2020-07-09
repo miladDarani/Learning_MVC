@@ -26,7 +26,7 @@
                 <div class="bord">
 
                     <h5><strong>{{$game->title}}</strong></h5>
-                    <img class="card-img-top" src="images/{{$game->image}}" alt="Card image cap">
+                    <img class="card-img-top" src="storage/images/{{$game->featured_image}}" alt="Card image cap">
 
                         <div class="card-body ">
                             <h6 class="card-title">{{$game->category->name}}</h6>

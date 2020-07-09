@@ -95,7 +95,7 @@
               <!--Slides-->
               <div class="carousel-inner text-center text-md-left" role="listbox">
                 <div class="carousel-item active">
-                  <img src="/images/{{$game->image}}"
+                  <img src="/storage/images/{{$game->featured_image}}"
                     alt="First slide" class="img-fluid">
                 </div>
                 
@@ -242,7 +242,7 @@
             <div class="card bought-card card-cascade narrower card-ecommerce">
               <!-- Card image -->
               <div class="view view-cascade overlay">
-                <img src="/images/{{$single->image}}" class="card-img-top" alt="sample photo">
+                <img src="/images/{{$single->featured_image}}" class="card-img-top" alt="sample photo">
                 <a>
                   <div class="mask rgba-white-slight waves-effect waves-light"></div>
                 </a>
