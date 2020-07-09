@@ -102,6 +102,9 @@
             </div>
         </nav>
 
+        <!-- FLASH AREA -->
+        @include('partials/flash')
+       
         <main class="py-4">
             @yield('content')
         </main>

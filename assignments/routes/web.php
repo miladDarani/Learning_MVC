@@ -30,12 +30,13 @@ Route::get('/members', function (){
 
 Route::middleware(['auth','admin'])->group(function(){
 
-    Route::get('/admin/posts', 'Admin\PostsController@index');
+    Route::get('/admin/games', 'Admin\GamesController@index');
     Route::get('/admin', 'AdminController@home');
-    Route::get('admin/posts/create', 'Admin\PostsController@create');
-    Route::post('admin/posts/create', 'Admin\PostsController@store');
+    Route::get('admin/games/create', 'Admin\GamesController@create');
+    Route::post('admin/games/create', 'Admin\GamesController@store');
 });
 
+Route::get('/games', 'GamesController@index');
 
 Auth::routes();
 
