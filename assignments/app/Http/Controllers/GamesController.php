@@ -16,7 +16,7 @@ class GamesController extends Controller
         $games = Game::with('category')->latest()->get();
         $categories = Category::all();
         $title = "Home";
-        return view('home', compact('games', 'categories', 'title'));
+        return view('home1', compact('games', 'categories', 'title'));
     }
 
     /**
