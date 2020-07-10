@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Validator;
+
 use \App\Game;
 use \App\Category;
 
@@ -47,9 +47,10 @@ class GamesController extends Controller
             'title' => 'required|string|max:255',
             'abstract' => 'required|string|max:500',
             'body' => 'required|string',
+            'rating' => 'required|string',
             'featured_image' => 'nullable|image',
             'category_id' => 'nullable|integer',
-            'year'=> 'nullable|integer'
+            'year'=> 'required|integer'
         ]);
 
         if(!empty($valid['featured_image'])){
@@ -68,6 +69,7 @@ class GamesController extends Controller
             'title' => $valid['title'],
             'abstract'=>$valid['abstract'],
             'body'=>$valid['body'],
+            'rating'=>$valid['rating'],
             'category_id'=>$valid['category_id'] ?? 1,
             'featured_image' => $featured_image ?? '' ,
             'year' => $valid['year']
@@ -123,8 +125,8 @@ class GamesController extends Controller
             'title' => 'required|string|max:255',
             'abstract' => 'required|string|max:500',
             'body' => 'required|string',
-            'status' => 'nullable|string',
-            'year' => 'nullabe|integer',
+            'year' => 'required|string',
+            'rating' => 'required|string',
             'featured_image' => 'nullable|image',
             'category_id' => 'nullable|integer'
         ]);
@@ -144,6 +146,7 @@ class GamesController extends Controller
         $game->abstract = $valid['abstract'];
         $game->body = $valid['body'];
         $game->year = $valid['year'];
+        $game->rating = $valid['rating'];
         $game->category_id = $valid['category_id'] ?? 1;
         if(!empty($featured_image)){
             $game->featured_image = $featured_image;

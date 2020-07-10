@@ -9,8 +9,10 @@
 
      <div class="card-header">
          <h1 class="card-title">{{ $title }}</h1>
+          <a href="/admin/games/create" class="btn btn-warning">Create Record</a>
      </div>
-    <a href="/admin/games/create" class="btn btn-warning">CREATE game</a>
+
+       
      <div class="card-body">
 
        <table class="table table-striped">
@@ -20,6 +22,7 @@
                 <th>game ID</th>
                 <th>Title</th>
                 <th>Published at</th>
+                <th>Rating</th>
                 <th>Actions</th>
             </tr>
             
@@ -29,6 +32,7 @@
                 <td>{{$game->title}}</td>
                 <td>{{$game->created_at}}</td>
                 <td><a href="games/{{$game->id}}/edit" class="btn btn-primary">Edit</a></td>
+                <td>{{$game->rating}}</td>
                 <td>
                     <form action="/admin/games" method="game" class="delete"
                         onSubmit="return confirm('Do you really want to delete?')">

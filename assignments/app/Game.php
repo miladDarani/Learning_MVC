@@ -15,7 +15,8 @@ class Game extends Model
         'body',
         'featured_image',
         'category_id',
-        'year'
+        'year',
+        'rating'
     ];
     /**
      * each category has many game

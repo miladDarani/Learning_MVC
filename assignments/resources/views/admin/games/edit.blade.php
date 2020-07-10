@@ -59,6 +59,9 @@
             <!-- --------------------------------------------------------- -->
             <div class="form-group">
                 <label for="featured_image">Image</label>
+                @if(!empty($game->featured_image))
+                <img src="/storage/images/{{$game->featured_image}}" style="width: 150px; height: auto" />
+                @endif
                 <input type="file" name="featured_image" value="{{old('featured_image', $game->featured_image)}}">
 
                 
@@ -91,6 +94,27 @@
             </div>
             <!-- --------------------------------------------------------- -->
             <!-- --------------------------------------------------------- -->
+            <div class="form-group">
+                
+                <label for="rating"><strong>Rating:</strong></label><br>
+                <input  
+                    @if(old('rating', $game->rating) == 'everyone')
+                        checked
+                    @endif
+
+                    type="radio" name="rating" value="everyone" checked>
+                Public &nbsp;
+                <input 
+                    @if(old('rating', $game->rating) == 'mature')
+                        checked
+                    @endif
+                    type="radio" name="rating" value="mature">
+                Private &nbsp;
+
+                @error('rating')
+                    <span class="alert alert-danger">{{ $message }}</span>
+                @enderror
+            </div>
             
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>

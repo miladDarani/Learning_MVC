@@ -90,6 +90,27 @@
             </div>
             <!-- --------------------------------------------------------- -->
             <!-- --------------------------------------------------------- -->
+            <div class="form-group">
+                
+                <label for="rating"><strong>Post rating:</strong></label><br>
+                <input  
+                    @if(old('rating') == 'everyone')
+                        checked
+                    @endif
+
+                    type="radio" name="rating" value="everone" checked>
+                Public &nbsp;
+                <input 
+                    @if(old('rating') == 'mature')
+                        checked
+                    @endif
+                    type="radio" name="rating" value="mature">
+                Private &nbsp;
+
+                @error('rating')
+                    <span class="alert alert-danger">{{ $message }}</span>
+                @enderror
+            </div>
             
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
