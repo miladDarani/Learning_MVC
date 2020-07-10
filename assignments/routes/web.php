@@ -34,6 +34,7 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::get('/admin', 'AdminController@home');
     Route::get('admin/games/create', 'admin\GamesController@create');
     Route::post('admin/games/create', 'admin\GamesController@store');
+    Route::delete('/admin/games', 'admin\GamesController@destroy');
     Route::get('/admin/games/{id}/edit', 'admin\GamesController@edit');
     Route::put('/admin/games', 'admin\GamesController@update');
 });

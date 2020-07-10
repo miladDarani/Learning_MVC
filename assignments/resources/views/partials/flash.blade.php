@@ -1,6 +1,10 @@
   @if(session('error'))
     
-    <div class="alert alert-danger">
+    <div style="    height: 40px;
+    /* font-weight: bold; */
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;" class="alert alert-danger">
         {{ session('error') }}
     </div>
 
@@ -8,7 +12,11 @@
 
   @if(session('success'))
     
-    <div class="success alert-success">
+    <div style="    height: 40px;
+    /* font-weight: bold; */
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;" class="success alert-success">
         {{ session('success') }}
     </div>
 
@@ -16,7 +24,11 @@
 
   @if($errors->any())
     
-    <div class="alert alert-danger">
+    <div style="    height: 40px;
+    /* font-weight: bold; */
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;" class="alert alert-danger">
       Please Review and correct form submission
     </div>
 

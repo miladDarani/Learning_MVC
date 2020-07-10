@@ -103,13 +103,13 @@
                     @endif
 
                     type="radio" name="rating" value="everyone" checked>
-                Public &nbsp;
+                Everyone &nbsp;
                 <input 
                     @if(old('rating', $game->rating) == 'mature')
                         checked
                     @endif
                     type="radio" name="rating" value="mature">
-                Private &nbsp;
+                Mature &nbsp;
 
                 @error('rating')
                     <span class="alert alert-danger">{{ $message }}</span>

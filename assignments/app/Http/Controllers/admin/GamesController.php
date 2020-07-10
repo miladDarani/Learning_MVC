@@ -168,10 +168,12 @@ class GamesController extends Controller
      */
     public function destroy(Request $request)
     {
+
         //validate , make sure id is passed in request
         $valid = $request->validate([
             'id'=> 'required|integer'
         ]);
+       
             if(Game::find($valid['id'])->delete()){
 
                 return back()->with('success', 'Game has been deleted!');

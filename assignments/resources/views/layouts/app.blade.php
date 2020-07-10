@@ -101,10 +101,12 @@
                 </div>
             </div>
         </nav>
-
+        
+        <div>
         <!-- FLASH AREA -->
         @include('partials/flash')
-       
+        </div>
+
         <main class="py-4">
             @yield('content')
         </main>

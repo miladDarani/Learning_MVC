@@ -34,7 +34,7 @@
                 <td><a href="games/{{$game->id}}/edit" class="btn btn-primary">Edit</a></td>
                 <td>{{$game->rating}}</td>
                 <td>
-                    <form action="/admin/games" method="game" class="delete"
+                    <form action="/admin/games" method="post" class="delete"
                         onSubmit="return confirm('Do you really want to delete?')">
                         @csrf
                         @method('DELETE')
