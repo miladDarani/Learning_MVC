@@ -30,10 +30,12 @@ Route::get('/members', function (){
 
 Route::middleware(['auth','admin'])->group(function(){
 
-    Route::get('/admin/games', 'Admin\GamesController@index');
+    Route::get('/admin/games', 'admin\GamesController@index');
     Route::get('/admin', 'AdminController@home');
-    Route::get('admin/games/create', 'Admin\GamesController@create');
-    Route::post('admin/games/create', 'Admin\GamesController@store');
+    Route::get('admin/games/create', 'admin\GamesController@create');
+    Route::post('admin/games/create', 'admin\GamesController@store');
+    Route::get('/admin/games/{id}/edit', 'admin\GamesController@edit');
+    Route::put('/admin/games', 'admin\GamesController@update');
 });
 
 Route::get('/games', 'GamesController@index');

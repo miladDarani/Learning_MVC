@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Validator;
 use \App\Game;
 use \App\Category;
 
@@ -97,10 +97,10 @@ class GamesController extends Controller
     {
         
 
-        $Game = Game::find($id);
+        $game = Game::find($id);
         $categories = Category::all();
         $title = 'Edit Game';
-        return view('admin/games/edit', compact('title', 'Game', 'categories'));
+        return view('admin/games/edit', compact('title', 'game', 'categories'));
 
 
 
@@ -124,6 +124,7 @@ class GamesController extends Controller
             'abstract' => 'required|string|max:500',
             'body' => 'required|string',
             'status' => 'nullable|string',
+            'year' => 'nullabe|integer',
             'featured_image' => 'nullable|image',
             'category_id' => 'nullable|integer'
         ]);
@@ -138,17 +139,17 @@ class GamesController extends Controller
 
         }
 
-        $Game = Game::find($valid['id']);
-        $Game->title = $valid['title'];
-        $Game->abstract = $valid['abstract'];
-        $Game->body = $valid['body'];
-        $Game->year = $valid['year'];
-        $Game->category_id = $valid['category_id'] ?? 1;
+        $game = Game::find($valid['id']);
+        $game->title = $valid['title'];
+        $game->abstract = $valid['abstract'];
+        $game->body = $valid['body'];
+        $game->year = $valid['year'];
+        $game->category_id = $valid['category_id'] ?? 1;
         if(!empty($featured_image)){
-            $Game->featured_image = $featured_image;
+            $game->featured_image = $featured_image;
         }
 
-        if($Game->save()){
+        if($game->save()){
             return redirect('admin/games')->with('success', 'Game have been updated');
         }
 
