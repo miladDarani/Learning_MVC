@@ -29,6 +29,15 @@
                 <td>{{$post->title}}</td>
                 <td>{{$post->created_at}}</td>
                 <td><a href="" class="btn btn-primary">Edit</a></td>
+                <td>
+                    <form action="/admin/posts" method="post" class="delete"
+                        onSubmit="return confirm('Do you really want to delete?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="hidden" name="id" value="{{$post->id}}"/>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
 

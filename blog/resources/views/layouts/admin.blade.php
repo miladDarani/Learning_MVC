@@ -66,7 +66,9 @@
       </div>
     </div>
   </nav>
-
+ 
+  @include('partials/flash')
+  
   <!-- Page Content -->
   <div class="container">
 

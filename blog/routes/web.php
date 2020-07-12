@@ -68,8 +68,12 @@ Route::middleware('admin')->group(function(){
 
     Route::get('/admin/posts', 'Admin\PostsController@index');
     Route::get('/admin', 'AdminController@home');
-    Route::get('admin/posts/create', 'Admin\PostsController@create');
-    Route::post('admin/posts/create', 'Admin\PostsController@store');
+    Route::get('/admin/posts/create', 'Admin\PostsController@create');
+    Route::post('/admin/posts/create', 'Admin\PostsController@store');
+    Route::delete('/admin/posts', 'Admin\PostsController@destroy');
+    Route::get('/admin/posts/{id}/edit', 'Admin\PostsController@edit');
+    Route::put('/admin/posts', 'Admin\PostsController@update');
+    
 });
 
 

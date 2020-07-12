@@ -12,12 +12,14 @@
 
     <div class="card-body">
             
-        <form action="/admin/posts/create" method="post" class="form" enctype="multipart/form-data">
+        <form action="/admin/posts" method="post" class="form" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name='id' value="{{ old('id', $post->id )}}">
             <div class="form-group">
+            @method('PUT')
                 
                 <label for="title">Title</label>
-                <input type="text" class="form-control" name="title" value="{{old('title') }}">
+                <input type="text" class="form-control" name="title" value="{{old('title', $post->title) }}">
 
                 @error('title')
                     <span class="alert alert-danger">{{ $message }}</span>
@@ -28,7 +30,7 @@
             <!-- --------------------------------------------------------- -->
             <div class="form-group">
                 <label for="abstract">Abstract</label>
-                <textarea class="form-control" name="abstract" id="abstract" cols="5" rows="8">{{old('abstract')}} </textarea>
+                <textarea class="form-control" name="abstract" id="abstract" cols="5" rows="8">{{old('abstract', $post->abstract)}} </textarea>
                 @error('abstract')
                     <span class="alert alert-danger">{{ $message }}</span>
                 @enderror
@@ -37,7 +39,7 @@
             <!-- --------------------------------------------------------- -->
             <div class="form-group">
                 <label for="body">Body</label>
-                <textarea class="form-control" name="body" id="body" cols="5" rows="3">{{old('body')}} </textarea>
+                <textarea class="form-control" name="body" id="body" cols="5" rows="3">{{old('body', $post->body)}} </textarea>
 
                 @error('body')
                     <span class="alert alert-danger">{{ $message }}</span>
@@ -47,7 +49,10 @@
             <!-- --------------------------------------------------------- -->
             <div class="form-group">
                 <label for="featured_image">Image</label>
-                <input type="file" name="featured_image" value="{{old('featured_image')}}">
+                @if(!empty($post->featured_image))
+                <img src="/images/{{ $post->featured_image }}" style="width: 150px; height: auto" />
+                @endif
+                <input type="file" name="featured_image" value="{{old('featured_image', $post->featured_image)}}">
 
                 
                 @error('featured_image')
@@ -64,7 +69,7 @@
                     @foreach($categories as $cat)
                     <option 
 
-                        @if($cat->id == old('category_id'))
+                        @if($cat->id == old('category_id', $post->category_id))
                             selected
                         @endif
 
@@ -83,14 +88,14 @@
                 
                 <label for="status"><strong>Post Status:</strong></label><br>
                 <input  
-                    @if(old('status') == 'public')
+                    @if(old('status', $post->status) == 'public')
                         checked
                     @endif
 
                     type="radio" name="status" value="public" checked>
                 Public &nbsp;
                 <input 
-                    @if(old('status') == 'private')
+                    @if(old('status', $post->status) == 'private')
                         checked
                     @endif
                     type="radio" name="status" value="private">
