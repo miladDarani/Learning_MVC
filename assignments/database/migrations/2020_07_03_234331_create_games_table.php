@@ -19,10 +19,10 @@ class CreateGamesTable extends Migration
             $table->string('title',255);
             $table->text('abstract');
             $table->longText('body');
-            $table->enum('rating',['mature', 'everyone'])->default('everyone');
-            $table->integer('category_id')->unsigned();
+            $table->enum('rating',['mature', 'everyone'])->default('everyone')->nullable();
+            $table->integer('category_id')->unsigned()->default(1);
             $table->integer('year')->unsigned();
-            $table->string('featured_image');
+            $table->string('featured_image',255)->nullable();
             $table->softDeletes();
         });
     }

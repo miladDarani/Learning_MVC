@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -19,11 +20,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background: #0c1b2b">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav style="background: #0c1b2b !important; color:white !important" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a style="color:white" class="navbar-brand" href="{{ url('/') }}">
                     Home
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -43,49 +44,49 @@
                             
 
                             <li >
-                                <a class="nav-link" href="/">Home
+                                <a style="color:white"  class="nav-link" href="/">Home
                                   <span class="sr-only">(current)</span>
                                 </a>
                             </li>
 
                             <li >
-                                <a class="nav-link" href="/about">About</a>
+                                <a style="color:white"  class="nav-link" href="/about">About</a>
                             </li>
 
                             <li  >
-                                <a class="nav-link" href="/contact">Contact</a>
+                                <a style="color:white"  class="nav-link" href="/contact">Contact</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li   class="nav-item">
+                                <a style="color:white !important" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a style="color:white !important" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
 
                             @else
                             @if(Auth::user()->is_admin)
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admin">Admin Dash</a>
+                            <li   class="nav-item">
+                                <a style="color:white !important" class="nav-link" href="/admin">Admin Dash</a>
                             </li>
                             <li >
-                                <a class="nav-link" href="/">Home
+                                <a style="color:white"  class="nav-link" href="/">Home
                                   <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             
                             @endif
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a style="color:white"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a style="color:white"  class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

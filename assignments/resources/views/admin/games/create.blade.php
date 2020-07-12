@@ -98,7 +98,7 @@
                         checked
                     @endif
 
-                    type="radio" name="rating" value="everone" checked>
+                    type="radio" name="rating" value="everyone" checked>
                 Everyone &nbsp;
                 <input 
                     @if(old('rating') == 'mature')

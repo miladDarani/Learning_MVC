@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a href="/" class="btn btn-primary btn-sm">Go to Home</a>
                 </div>
             </div>
         </div>

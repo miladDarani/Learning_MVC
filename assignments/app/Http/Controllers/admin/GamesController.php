@@ -47,7 +47,7 @@ class GamesController extends Controller
             'title' => 'required|string|max:255',
             'abstract' => 'required|string|max:500',
             'body' => 'required|string',
-            'rating' => 'required|string',
+            'rating' => 'nullable|string',
             'featured_image' => 'nullable|image',
             'category_id' => 'nullable|integer',
             'year'=> 'required|integer'
@@ -126,7 +126,7 @@ class GamesController extends Controller
             'abstract' => 'required|string|max:500',
             'body' => 'required|string',
             'year' => 'required|string',
-            'rating' => 'required|string',
+            'rating' => 'nullable|string',
             'featured_image' => 'nullable|image',
             'category_id' => 'nullable|integer'
         ]);

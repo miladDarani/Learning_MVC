@@ -131,17 +131,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin">Admin Dash</a>
                             </li>
-                             <li >
-                                <a class="nav-link" href="/">Home
-                                  <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li >
-                                <a class="nav-link" href="/about">About</a>
-                            </li>
-                            <li  >
-                                <a class="nav-link" href="/contact">Contact</a>
-                            </li>
+                            
                             
                             @endif
                             <li class="nav-item dropdown">
@@ -183,3 +173,7 @@
 
 </nav>
 <!--/.Navbar-->
+  <div>
+  <!-- FLASH AREA -->
+  @include('partials/flash')
+  </div>
