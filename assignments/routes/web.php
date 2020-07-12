@@ -46,6 +46,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/linkstorage', function () {
-    Artisan::call('storage:link')
+    Artisan::call('storage:link');
 });
 
