@@ -669,3 +669,19 @@
 #35 /Users/Milad/Desktop/STEVES/php_mvc/assignments/server.php(21): require_once('/Users/Milad/De...')
 #36 {main}
 "} 
+[2020-07-12 15:07:28] local.ERROR: There are no commands defined in the "migrage" namespace.
+
+Did you mean this?
+    migrate {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"migrage\" namespace.
+
+Did you mean this?
+    migrate at /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/symfony/console/Application.php:574)
+[stacktrace]
+#0 /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/symfony/console/Application.php(625): Symfony\\Component\\Console\\Application->findNamespace('migrage')
+#1 /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/symfony/console/Application.php(228): Symfony\\Component\\Console\\Application->find('migrage:refresh')
+#2 /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Users/Milad/Desktop/STEVES/php_mvc/assignments/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /Users/Milad/Desktop/STEVES/php_mvc/assignments/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
