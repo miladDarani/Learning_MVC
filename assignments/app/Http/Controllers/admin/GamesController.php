@@ -9,7 +9,8 @@ use \App\Game;
 use \App\Category;
 
 class GamesController extends Controller
-{
+{   
+    App::make('files')->link(storage_path('app/public'), public_path('storage'));
     /**
      * Display a listing of the resource.
      *
