@@ -60,7 +60,7 @@ class GamesController extends Controller
         //get the original file name
         $featured_image = time(). '_' . $file->getClientOriginalName();
         //save the image
-        $path = $file->storeAs('public/images', $featured_image);
+        $path = $file->storeAs('images', $featured_image);
         
 
         }
@@ -138,7 +138,7 @@ class GamesController extends Controller
         //get the original file name
         $featured_image = time(). '_' . $file->getClientOriginalName();
         //save the image
-        $path = $file->storeAs('public/images', $featured_image );
+        $path = $file->storeAs('images', $featured_image );
 
         }
 
